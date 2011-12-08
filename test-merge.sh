@@ -1,5 +1,5 @@
 remote_mango='sugareps'
-remote_committer='origin'
+remote_committer='sugareps'
 committer_branch='ibmf_custom'
 test_branch='ibm_current'
 
@@ -17,19 +17,23 @@ remote_committer=`echo "$1" | cut -d: -f1`
 committer_branch=`echo "$1" | cut -d: -f2`
 fi
 
-echo 'Cleaning up'
+echo 'Cleaning up ...'
 git reset --hard
+echo '-----------'
 
-echo 'Fetching remotes'
+echo 'Fetching remotes ...'
 git fetch $remote_mango
 git fetch $remote_committer
 git checkout $test_branch
+echo '-----------'
 
-echo 'Updating local branch'
+echo 'Updating local branch ...'
 git pull $remote_mango $test_branch
+echo '-----------'
 
-echo 'Performing test merge'
+echo "Performing test merge ($remote_committer/$committer_branch) ..."
 git merge --no-commit --no-ff $remote_committer/$committer_branch
+echo '-----------'
 
 echo 'Changes to commit:'
 git status -s
