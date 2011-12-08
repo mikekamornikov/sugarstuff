@@ -1,4 +1,4 @@
-remote_mango='upstream'
+remote_mango='sugareps'
 remote_committer='origin'
 committer_branch='ibmf_custom'
 test_branch='ibm_current'
