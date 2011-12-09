@@ -21,10 +21,13 @@ echo 'Cleaning up ...'
 git reset --hard
 echo '-----------'
 
-echo 'Fetching remotes ...'
+echo "Fetching remotes ($remote_mango, $remote_committer) ..."
 git fetch $remote_mango
 git fetch $remote_committer
-git checkout $test_branch
+echo '-----------'
+
+echo "Creating $test_branch ..."
+git checkout -b $test_branch $remote_mango/$test_branch
 echo '-----------'
 
 echo 'Updating local branch ...'
