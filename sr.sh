@@ -1,5 +1,5 @@
 # Specific to sadek's machine - change for your machine
-gitbase="/home/mak/dev/ibm_poc"
+gitbase="/home/mak/sugarcrm/ibm_poc"
 webbase="/home/mak/vhosts/ibm_poc"
 
 # defaults - change if you like
